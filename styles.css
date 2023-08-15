@@ -1,0 +1,127 @@
+/* Add these styles to your existing styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Added to contain the balloons */
+}
+
+.balloon {
+    width: 40px;
+    height: 60px;
+    background-color: #3498db;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    position: absolute;
+    animation: balloon-bounce 2s ease-in-out infinite;
+}
+
+#balloon1 {
+    left: calc(10% + 30px);
+    bottom: -60px;
+    animation-delay: 1s;
+}
+
+#balloon2 {
+    left: calc(50% - 20px);
+    bottom: -60px;
+    animation-delay: 2s;
+}
+
+#balloon3 {
+    right: calc(10% + 30px);
+    bottom: -60px;
+    animation-delay: 1.5s;
+}
+
+.thread {
+    width: 2px;
+    height: 70px;
+    background-color: #444;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
+.twinkle {
+    width: 8px;
+    height: 8px;
+    background-color: #f39c12;
+    border-radius: 50%;
+    position: absolute;
+    animation: twinkle 1s ease-in-out infinite;
+}
+
+.confetti {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #e74c3c;
+    border-radius: 50%;
+    transform-origin: 50% 50%;
+    animation: confetti-fall 3s linear infinite;
+}
+
+.sparkles {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-color: #f1c40f;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: sparkles-fall 2s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes balloon-bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes confetti-fall {
+    0% {
+        opacity: 1;
+        transform: translateY(-10vh) rotate(45deg) scale(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100vh) rotate(45deg) scale(1);
+    }
+}
+
+@keyframes sparkles-fall {
+    0% {
+        transform: translateY(-10vh) rotate(45deg) scale(0);
+    }
+    100% {
+        transform: translateY(100vh) rotate(45deg) scale(1);
+    }
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
